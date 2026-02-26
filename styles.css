@@ -67,6 +67,9 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+body {
+    min-width: 400px;
+}
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
@@ -74,7 +77,47 @@ table {
     max-width: 1200px;
     margin: 0 auto;
 }
+.hero {
+    width: 100%;
+}
+h1 {
+    font-size: 2.5rem;
+    color: var(--blue);
+}
 
+h2 {
+    font-size: 2rem;
+    color: var(--white);
+}
+.expertise {
+    color: var(--black);
+}
+.expertise h2 {
+    color: var(--black);
+    font-weight: 600;
+}
+h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+.innovationinvestment p {
+    color: var(--white);
+    font-size: 1.25rem;
+    max-width: 60%;
+}
+.button {
+    background-color: var(--blue);
+    border-radius: 5px;
+    color: var(--white);
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+footer, .contact {
+    background-color: var(--black);
+    color: var(--white);
+}
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 .innovationinvestment {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
@@ -145,7 +188,7 @@ table {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media screen and (min-width: 800px) {
     #results {
         grid-template-columns: 1fr 1fr;
     }
@@ -159,6 +202,9 @@ table {
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1024px) {
+
+}

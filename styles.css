@@ -69,6 +69,7 @@ table {
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body {
     min-width: 400px;
+    background-color: var(--white);
 }
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -91,10 +92,20 @@ h2 {
 }
 .expertise {
     color: var(--black);
+    display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	background-color: var(--white);
+	border-radius: 5px;
 }
 .expertise h2 {
     color: var(--black);
     font-weight: 600;
+}
+.offer {
+    display: flex;
+    color: var(--white);
+    background-color: var(--blue);
 }
 h3 {
     font-size: 1.5rem;
@@ -113,6 +124,14 @@ h3 {
     text-decoration: none;
     font-size: 2rem;
     font-weight: bold;
+}
+.results {
+    background-color: var(--blue);
+    color: var(--white);
+}
+table {
+    background-color: var(--black);
+    color: var(--white);
 }
 footer, .contact {
     background-color: var(--black);

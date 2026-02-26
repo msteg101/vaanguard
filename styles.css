@@ -80,6 +80,7 @@ body {
 }
 .hero {
     width: 100%;
+    margin: 0 auto;
 }
 h1 {
     font-size: 2.5rem;
@@ -90,6 +91,108 @@ h2 {
     font-size: 2rem;
     color: var(--white);
 }
+h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+header {
+    background-color: var(--black);
+    color: var(--blue);
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav {
+    background-color: var(--black);
+    position: relative;
+    z-index: 9999;
+}
+nav ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+    opacity: 0;
+    background: var(--black);
+    margin-top: 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+nav ul li h2 {
+    visibility: visible;
+    height: auto;
+    color: var(--blue);
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+}
+nav li a {
+    display: block;
+    font-weight: bold;
+    color: var(--blue);
+    transition: background-color 0.3s ease-in;
+}
+nav a:hover, nav input:hover {
+    background-color: var(--black);
+}
+.expertise h2 {
+    color: var(--black);
+    font-weight: 600;
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+label span {
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color 0.3s ease-out;
+    width: 2rem;
+}
+label span:before, label span:after {
+    background-color: var(--white);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 2rem;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+input {
+    display: none;
+}
+input:checked ~ nav ul {
+    max-height: 500px;
+    opacity: 1;
+}
+input:checked ~ label span {
+    background-color: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
 .expertise {
     color: var(--black);
     display: grid;
@@ -98,18 +201,10 @@ h2 {
 	background-color: var(--white);
 	border-radius: 5px;
 }
-.expertise h2 {
-    color: var(--black);
-    font-weight: 600;
-}
 .offer {
     display: flex;
     color: var(--white);
     background-color: var(--blue);
-}
-h3 {
-    font-size: 1.5rem;
-    color: var(--white);
 }
 .innovationinvestment p {
     color: var(--white);
@@ -152,7 +247,6 @@ footer, .contact {
 .svg {
     content: "";
     display: flex;
-    float: left;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
@@ -208,6 +302,16 @@ footer, .contact {
 
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 800px) {
+    nav ul {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     #results {
         grid-template-columns: 1fr 1fr;
     }

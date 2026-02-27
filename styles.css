@@ -69,7 +69,6 @@ table {
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -88,10 +87,6 @@ h3 {
     font-size: 1.25rem;
     font-weight: bold;
     padding: 10px;
-}
-footer, .contact {
-    background-color: var(--black);
-    color: var(--white);
 }
 
 /* -DONE- ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
@@ -131,10 +126,20 @@ header .container {
     position: relative;
 }
 
+#menu-toggle {
+  position: absolute;
+  left: -9999px;
+}
+
+label[for="menu-toggle"] {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
 label span {
-    background-color: var(--white);
     display: block;
-    height: .25rem;
+    background: var(--white);
+    height: .2rem;
     position: relative;
     transition: background-color 0.2s ease-in-out;
     width: 2rem;
@@ -148,10 +153,10 @@ label span:before, label span:after {
     position: absolute;
     transition: 0.2s ease-in-out;
 }
-label span::before {
+label span:before {
     top: .75rem;
 }
-label span::after {
+label span:after {
     top: -.75rem;
 }
 nav ul {
@@ -168,13 +173,16 @@ nav ul {
     max-height: 500px;
     opacity: 1;
 }
+
 #menu-toggle:checked + label span {
-    background-color: transparent;
+    background: transparent;
 }
+
 #menu-toggle:checked + label span:before {
     transform: rotate(-45deg);
     top: 0;
 }
+
 #menu-toggle:checked + label span:after {
     transform: rotate(45deg);
     top: 0;
@@ -198,46 +206,105 @@ main {
     display: block;
 }
 
-.expertise h2 {
-    color: var(--black);
-    font-weight: 600;
-}
-
-
-.expertise {
-    color: var(--black);
-    display: grid;
-	grid-template-columns: 1fr;
-	gap: 1rem;
-	background-color: var(--white);
-	border-radius: 5px;
-}
-.offer {
-    display: flex;
+.innovationinvestment h2 {
+    font-size: 1.6rem;
     color: var(--white);
-    background-color: var(--blue);
+    margin-bottom: 0.5rem;
 }
+
 .innovationinvestment p {
     color: var(--white);
-    font-size: 1.25rem;
-    max-width: 60%;
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin: 0 auto;
 }
 .button {
     background-color: var(--blue);
-    border-radius: 5px;
+    border-radius: 8px;
     color: var(--white);
     padding: 1rem;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
+    display: inline-block;
 }
-.results {
-    background-color: var(--blue);
+
+.expertise {
+    background: var(--white);
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.expertise .container > h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--charcoal);
+}
+.offer {
     color: var(--white);
+    background: var(--blue);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
 }
+
+.results {
+    background: var(--blue);
+    color: var(--white);
+    padding: 1.5rem 0;
+}
+
 table {
+    width: 100%;
     background-color: var(--black);
     color: var(--white);
+    border: 1px solid var(--charcoal);
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--charcoal);
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--charcoal);
+}
+
+tbody > tr:nth-child(even) {
+    background: var(--charcoal);
+}
+
+.contact {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1.5rem 0;
+}
+
+.contact form {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.contact label {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 2px solid var(--blue);
+    background: var(--white);
+    font-size: 0.9rem;
 }
 
 #submit {
@@ -245,6 +312,12 @@ table {
     width: 100%;
     border: none;
     color: var(--white);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 footer {
@@ -316,6 +389,32 @@ footer a {
 
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 800px) {
+    #profits, #bar-chart {
+        align-self: start;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    #results .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: start;
+    }
+
+    #results .container > h2, #results .container > p {
+        grid-column: 1 / -1;
+    }
+
+    #profits {
+        grid-column: 1 / 2;
+    }
+    
+    .offers {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+
     nav ul {
         max-height: none;
         opacity: 1;
@@ -326,24 +425,12 @@ footer a {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
-    #results .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
 }
 
 /* MEDIA QUERIES (LARGE) */
 @media screen and (min-width: 1024px) {
     .offers {
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto auto auto;
     }
 }

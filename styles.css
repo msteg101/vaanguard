@@ -262,14 +262,14 @@ table {
 }
 
 th {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     font-weight: bold;
     border: 1px solid var(--charcoal);
 }
 
 td {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     border: 1px solid var(--charcoal);
 }
@@ -287,7 +287,7 @@ tbody > tr:nth-child(even) {
 .contact form {
     display: grid;
     gap: 0.5rem;
-    max-width: 480px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -325,10 +325,12 @@ footer {
     text-align: center;
     color: var(--white);
     background: var(--black);
+    line-height: 1.5;
 }
 
 footer a {
     color: var(--blue);
+    line-height: 1.5;
 }
 
 .offers {
@@ -395,6 +397,9 @@ footer a {
         padding-top: 0;
     }
 
+    #profits table {
+        align-items: end;
+    }
     #results .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -409,10 +414,25 @@ footer a {
     #profits {
         grid-column: 1 / 2;
     }
-    
+
     .offers {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto;
+    }
+
+    #bar-chart {
+        grid-column: 2 / 3;
+        width: 100%;
+        max-width: 500px;
+        justify-self: end;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    label[for="menu-toggle"] {
+        display: none;
     }
 
     nav ul {
@@ -424,6 +444,12 @@ footer a {
         right: 1.5rem;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav ul li h2 {
+        color: var(--blue);
+        padding: 0;
+        margin: 0;
     }
 }
 

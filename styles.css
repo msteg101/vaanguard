@@ -66,35 +66,44 @@ table {
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-body {
-    min-width: 400px;
-    background-color: var(--white);
-}
-
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
-.hero {
-    width: 100%;
-    margin: 0 auto;
+
+/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+body {
+    min-width: 400px;
+    background-color: var(--white);
 }
 h1 {
     font-size: 2.5rem;
     color: var(--blue);
 }
-
 h2 {
-    font-size: 2rem;
-    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
 }
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 10px;
+}
+footer, .contact {
+    background-color: var(--black);
     color: var(--white);
 }
+
+.hero {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
 header {
     background-color: var(--black);
     color: var(--blue);
@@ -228,10 +237,7 @@ table {
     background-color: var(--black);
     color: var(--white);
 }
-footer, .contact {
-    background-color: var(--black);
-    color: var(--white);
-}
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 .innovationinvestment {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;

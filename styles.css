@@ -76,7 +76,8 @@ table {
 body {
     min-width: 400px;
     background-color: var(--white);
-    font-size: 1.15rem;
+    font-size: 1rem;
+    line-height: 1.15;
 }
 
 h2 {
@@ -85,7 +86,7 @@ h2 {
     padding: 10px;
 }
 h3 {
-    font-size: 1.95rem;
+    font-size: 1.5rem;
     font-weight: bold;
     padding: 10px;
 }
@@ -198,8 +199,8 @@ nav ul li {
 
 nav ul li h2 {
     color: var(--blue);
-    padding: 1rem 1.1rem;
     font-size: 1rem;
+    text-transform: uppercase;
 }
 
 nav a {
@@ -211,14 +212,14 @@ main {
 }
 
 .innovationinvestment h2 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     color: var(--white);
     margin-bottom: 0.5rem;
 }
 
 .innovationinvestment p {
     color: var(--white);
-    font-size: 1.25rem;
+    font-size: 1rem;
     max-width: 80%;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -260,6 +261,7 @@ main {
     background: var(--blue);
     color: var(--white);
     padding: 1.5rem 0;
+    line-height: 1.2;
 }
 
 table {
@@ -302,6 +304,7 @@ tbody > tr:nth-child(even) {
 .contact label {
     color: var(--white);
     font-size: 0.9rem;
+    bottom: -10px
 }
 
 .contact input[type="text"],
@@ -313,6 +316,7 @@ tbody > tr:nth-child(even) {
     border: 2px solid var(--blue);
     background: var(--white);
     font-size: 0.9rem;
+    
 }
 
 #submit {
@@ -321,13 +325,17 @@ tbody > tr:nth-child(even) {
     border: none;
     color: var(--white);
     margin: 0 auto;
+    
     padding: 1rem;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
-
+.contact input, .contact textarea, .contact #submit {
+    width: 100%;
+    box-sizing: border-box;
+}
 footer {
     padding: 1rem 0;
     text-align: center;
@@ -406,6 +414,10 @@ footer a {
         padding-top: 0;
     }
 
+    .expertise .container > h2 {
+        font-size: 1.75rem;
+    }
+
     #profits table {
         align-items: end;
     }
@@ -445,21 +457,24 @@ footer a {
     }
 
     nav ul {
-        justify-content: space-between;
-        max-height: none;
         opacity: 1;
+        max-height: none;
         overflow: visible;
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        gap: 2rem;
+        justify-content: flex-end;
     }
-
+    nav ul li {
+        text-align: right;
+    }
     nav ul li h2 {
         color: var(--blue);
-        padding: 0;
+        padding: 10px 0;
         margin: 0;
+        text-align: center;
     }
 }
 
@@ -474,7 +489,7 @@ footer a {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 3rem;
-        row-gap: 1rem;
+        row-gap: 0.25rem;
         align-items: start;
         width: 100%;
     }
@@ -484,8 +499,8 @@ footer a {
         flex-direction: column;
         gap: .5rem;
         padding-top: 10px;
+        width: 100%;
     }
-
     .contact label {
         bottom: -10px;
         margin: 0;
